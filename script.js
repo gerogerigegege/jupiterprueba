@@ -58,6 +58,18 @@ function init() {
     planet = new THREE.Mesh(planetGeometry, planetMaterial);
     planet.position.set(0, 8, -30);
     scene.add(planet);
+    
+    // Planet
+    const texturePlanet = loader.load('https://i.ibb.co/9rJBSdK/paolo-guerreroooo.png');
+    texturePlanet.anisotropy = 16;
+    const planetGeometry = new THREE.SphereBufferGeometry(10, 50, 50);
+    const planetMaterial = new THREE.MeshLambertMaterial({
+        map: texturePlanet,
+        fog: false
+    });
+    planet = new THREE.Mesh(planetGeometry, planetMaterial);
+    planet.position.set(1, 3, -10);
+    scene.add(planet);
 
 
     //Moon
